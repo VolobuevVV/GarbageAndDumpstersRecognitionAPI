@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package garbage_and_dumpsters_data;
+
+service DumpstersService {
+    rpc GetDumpstersCount(Time) returns (DumpstersCount);
+}
+
+service SmallGarbageService {
+    rpc GetSmallGarbageLevel(Time) returns (SmallGarbageLevel);
+}
+
+service LargeGarbageService {
+    rpc GetLargeGarbageLevel(Time) returns (LargeGarbageLevel);
+}
+
+message DumpstersCount {
+    int32 count_of_full = 1;
+    int32 count_of_empty = 2;
+    int32 count_of_closed = 3;
+}
+
+message SmallGarbageLevel {
+    int32 small_garbage_level = 1;
+}
+
+message LargeGarbageLevel {
+    int32 large_garbage_level = 1;
+}
+
+message Time {
+    int32 time = 1;
+}
+
+
+
